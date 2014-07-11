@@ -11,7 +11,7 @@ open import category.graph.core
 open import category.graph.morphism
 open import sets.unit
 open import overloading
-open import hott.hlevel
+open import hott.level
 
 trivial-graph : ∀ {i}(X : Set i) → Graph lzero i
 trivial-graph X = mk-graph record

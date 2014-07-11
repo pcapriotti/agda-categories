@@ -10,7 +10,7 @@ open import function.overloading
 open import sum
 open import equality.core
 open import equality.calculus using (unapΣ)
-open import hott.hlevel
+open import hott.level
 
 record cat-iso {i j}(C : Category i j)(x y : obj C) : Set j where
   constructor c-iso
@@ -39,7 +39,7 @@ private
 
     inverses-h1 : ∀ tf → h 1 (inverses tf)
     inverses-h1 (t , f) =
-      ×-hlevel (trunc x x (f ∘ t) id)
+      ×-level (trunc x x (f ∘ t) id)
                (trunc y y (t ∘ f) id)
 
     E : Set _
@@ -53,8 +53,8 @@ private
       ; iso₂ = λ _ → refl }
 
 cat-iso-hset : ∀ {i j}{C : Category i j} (x y : obj C) → h 2 (cat-iso C x y)
-cat-iso-hset {C = C} x y = iso-hlevel e-iso
-  ( Σ-hlevel (×-hlevel (trunc x y) (trunc y x))
+cat-iso-hset {C = C} x y = iso-level e-iso
+  ( Σ-level (×-level (trunc x y) (trunc y x))
              (λ tf → h↑ (inverses-h1 tf)) )
   where
     open as-category C

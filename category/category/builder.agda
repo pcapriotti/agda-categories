@@ -5,7 +5,7 @@ module category.category.builder where
 open import level
 open import equality.core
 
-open import hott.hlevel.core
+open import hott.level.core
 
 record Category₀Builder i j : Set (lsuc (i ⊔ j)) where
   field

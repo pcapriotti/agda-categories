@@ -9,7 +9,7 @@ open import category.isomorphism
 open import function.core
 open import equality.core
 open import equality.reasoning
-open import hott.hlevel
+open import hott.level
 
 open as-category C
 
@@ -20,10 +20,10 @@ monic {x}{y} f = ∀ {z} (g h : hom z x)
 
 monic-h1 : ∀ {x y}(f : hom x y)
            → h 1 (monic f)
-monic-h1 f = Π-hlevel-impl λ z
-           → Π-hlevel λ g
-           → Π-hlevel λ f
-           → Π-hlevel λ p
+monic-h1 f = Π-level-impl λ z
+           → Π-level λ g
+           → Π-level λ f
+           → Π-level λ p
            → trunc _ _ _ _
 
 -- an isomorphism is monic

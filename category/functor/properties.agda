@@ -6,7 +6,7 @@ open import function.core
 open import equality.core
 open import category.category
 open import category.functor.core
-open import category.functor.hlevel
+open import category.functor.level
 open import category.functor.ops
 
 func-left-unit : ∀ {i₀ j₀ i₁ j₁}

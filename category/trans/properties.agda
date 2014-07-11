@@ -7,7 +7,7 @@ open import category.category
 open import category.functor.core
 open import category.trans.core
 open import category.trans.ops
-open import category.trans.hlevel
+open import category.trans.level
 open import function.extensionality
 
 module category.trans.properties {i}{j}{i'}{j'}

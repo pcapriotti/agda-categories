@@ -22,12 +22,12 @@ record _⊣_ {i}{j}{i'}{j'}
   open as-category D
 
   field
-    adj : ∀ X Y → hom (apply F X) Y ≅ hom X (apply G Y)
+    adj : (X : obj C)(Y : obj D) → hom (apply F X) Y ≅ hom X (apply G Y)
 
-  Φ : ∀ {X}{Y} → hom (apply F X) Y → hom X (apply G Y)
+  Φ : {X : obj C}{Y : obj D} → hom (apply F X) Y → hom X (apply G Y)
   Φ {X}{Y} = apply (adj X Y)
 
-  Ψ : ∀ {X}{Y} → hom X (apply G Y) → hom (apply F X) Y
+  Ψ : {X : obj C}{Y : obj D} → hom X (apply G Y) → hom (apply F X) Y
   Ψ {X}{Y} = invert (adj X Y)
 
   field

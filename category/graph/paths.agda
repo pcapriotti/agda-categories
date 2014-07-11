@@ -8,7 +8,7 @@ open import equality.core hiding (singleton)
 open import equality.calculus
 open import equality.reasoning
 open import sets.nat.ordering using (refl≤)
-open import hott.hlevel
+open import hott.level
 open import category.graph.core
 
 private
@@ -36,7 +36,7 @@ private
     open import function.isomorphism
     open import container.core using (container)
     open import container.w renaming (W to W-type)
-    open import hott.hlevel.closure.core
+    open import hott.level.closure.core
 
     X : Set i
     X = obj W
@@ -48,9 +48,9 @@ private
     A (x , y) = (x ≡ y) ⊎ Σ (total W)
               λ { ((x' , y') , w) → (x' ≡ x) }
 
-    A-hlevel : (i : I) → h 2 (A i)
-    A-hlevel (x , y) = ⊎-hlevel refl≤ (hX x y)
-      (Σ-hlevel hW (λ { ((x' , _) , _) → hX x' x }))
+    A-level : (i : I) → h 2 (A i)
+    A-level (x , y) = ⊎-level refl≤ (hX x y)
+      (Σ-level hW (λ { ((x' , _) , _) → hX x' x }))
 
     B : {i : I} → A i → Set _
     B {x , .x} (inj₁ refl) = ⊥
@@ -84,10 +84,10 @@ private
         iso₂ {x}{.x} nil = refl
         iso₂ (w ∷ ws) = ap (_∷_ w) (iso₂ ws)
 
-    paths-hlevel : (x y : X) → h 2 (Paths W x y)
-    paths-hlevel x y = iso-hlevel (paths-iso x y)
-      (w-hlevel (λ { (x , y) → A-hlevel (x , y) }) (x , y))
-open hlevel public using (paths-hlevel)
+    paths-level : (x y : X) → h 2 (Paths W x y)
+    paths-level x y = iso-level (paths-iso x y)
+      (w-level (λ { (x , y) → A-level (x , y) }) (x , y))
+open hlevel public using (paths-level)
 
 private
   module properties {i j}{W : Graph i j} where

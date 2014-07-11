@@ -1,6 +1,6 @@
 {-# OPTIONS --without-K #-}
 
-module category.graph.morphism.hlevel where
+module category.graph.morphism.level where
 
 open import sum
 open import function.isomorphism

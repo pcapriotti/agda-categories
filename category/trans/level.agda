@@ -7,13 +7,13 @@ open import category.graph
 open import category.category
 open import category.functor.core
 open import category.trans.core
-open import hott.hlevel
+open import hott.level
 open import function.extensionality
 open import function.isomorphism using (_≅_; iso)
 open import function.isomorphism.properties
-open import hott.hlevel
+open import hott.level
 
-module category.trans.hlevel {i}{j}{i'}{j'}
+module category.trans.level {i}{j}{i'}{j'}
   {C : Category i j}{D : Category i' j'} where
 
 open as-category C
@@ -34,13 +34,13 @@ private
     nat-Σ-iso = iso unnat-Σ nat-Σ (λ x → refl) (λ x → refl)
 
 trans-hset : (F G : Functor C D) → h 2 (Trans F G)
-trans-hset F G = Π-hlevel (λ X → trunc _ _)
+trans-hset F G = Π-level (λ X → trunc _ _)
 
 natural-prop : (F G : Functor C D)
              → (α : Trans F G)
              → h 1 (natural F G α)
-natural-prop F G α = iso-hlevel (lem (nat-equation F G α))
-  (Π-hlevel (λ m → trunc _ _ _ _))
+natural-prop F G α = iso-level (lem (nat-equation F G α))
+  (Π-level (λ m → trunc _ _ _ _))
   where
     lem : ∀ {i}(P : total C → Set i)
         → ((m : total C) → P m)
@@ -50,8 +50,8 @@ natural-prop F G α = iso-hlevel (lem (nat-equation F G α))
                 (λ _ → refl) (λ _ → refl)
 
 nat-hset : (F G : Functor C D) → h 2 (Nat F G)
-nat-hset F G = iso-hlevel nat-Σ-iso
-  (Σ-hlevel (trans-hset F G)
+nat-hset F G = iso-level nat-Σ-iso
+  (Σ-level (trans-hset F G)
             (λ α → h↑ (natural-prop F G α)))
   where
     open NatΣ F G

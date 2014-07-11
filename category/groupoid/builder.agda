@@ -5,7 +5,7 @@ module category.groupoid.builder where
 open import level
 open import equality.core
 
-open import hott.hlevel.core
+open import hott.level.core
 
 record Groupoid₀Builder i j : Set (lsuc (i ⊔ j)) where
   field

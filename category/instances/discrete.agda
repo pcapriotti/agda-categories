@@ -13,7 +13,7 @@ import equality.groupoid as E
 open import equality.calculus
 open import function.core
 open import function.isomorphism
-open import hott.hlevel
+open import hott.level
 open import hott.weak-equivalence
 open import overloading.core
 

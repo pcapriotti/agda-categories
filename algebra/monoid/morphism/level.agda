@@ -1,6 +1,6 @@
 {-# OPTIONS --without-K #-}
 
-module algebra.monoid.morphism.hlevel where
+module algebra.monoid.morphism.level where
 
 open import equality.core
 open import function.isomorphism
@@ -10,10 +10,10 @@ import category.graph.morphism as G
 open import category.graph.trivial
 open import category.category.core
 open import category.functor.core
-open import category.functor.hlevel
+open import category.functor.level
 open import algebra.monoid.core
 open import algebra.monoid.morphism.core
-open import hott.hlevel
+open import hott.level
 open import overloading.core
 
 morph-equality-iso : ∀ {i j}{M : Monoid i}{N : Monoid j}
@@ -38,10 +38,10 @@ morph-equality : ∀ {i j}{M : Monoid i}{N : Monoid j}
               → f ≡ g
 morph-equality = apply morph-equality-iso
 
-morph-hlevel : ∀ {i j}(M : Monoid i)(N : Monoid j)
+morph-level : ∀ {i j}(M : Monoid i)(N : Monoid j)
              → h 2 (Morphism M N)
-morph-hlevel M N f g = iso-hlevel morph-equality-iso lem
+morph-level M N f g = iso-level morph-equality-iso lem
   where
     lem : h 1 (apply f ≡ apply g)
-    lem = (Π-hlevel λ _ → mtrunc _ _) _ _
+    lem = (Π-level λ _ → mtrunc _ _) _ _
       where open as-monoid N

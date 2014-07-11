@@ -9,7 +9,7 @@ open import category.category
 open import category.graph
 open import category.functor
 open import category.trans.core
-open import category.trans.hlevel
+open import category.trans.level
 open import category.trans.properties
 
 module category.trans.horizontal {i₀}{j₀}{i₁}{j₁}{i₂}{j₂}

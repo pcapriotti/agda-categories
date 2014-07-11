@@ -13,7 +13,7 @@ open import function.overloading
 open import category.category
 open import category.isomorphism
 open import category.univalence
-open import hott.hlevel
+open import hott.level
 open import hott.weak-equivalence
 open import hott.univalence
 
@@ -26,7 +26,7 @@ set i = mk-category record
   ; left-id = λ _ → refl
   ; right-id = λ _ → refl
   ; assoc = λ _ _ _ → refl
-  ; trunc = λ { _ B → Π-hlevel λ _ → proj₂ B }  }
+  ; trunc = λ { _ B → Π-level λ _ → proj₂ B }  }
 
 -- isomorphism in the category of sets is the same
 -- as isomorphism of types
@@ -70,7 +70,7 @@ iso-coherence-h2 : ∀ {i}{A B : HSet i}
                  → (proj₁ A ≅' proj₁ B)
                  ≅ (proj₁ A ≅ proj₁ B)
 iso-coherence-h2 {A = A , hA}{B = B , hB} =
-  lem-contr (λ _ → Π-hlevel λ x → hB _ _ _ _)
+  lem-contr (λ _ → Π-level λ x → hB _ _ _ _)
   where
     lem-contr : ∀ {i j}{A : Set i}{B : A → Set j}
               → ((x : A) → contr (B x))

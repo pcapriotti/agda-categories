@@ -2,7 +2,7 @@
 
 open import category.category
 
-module category.functor.hlevel {i j i' j'}
+module category.functor.level {i j i' j'}
   {C : Category i j}{D : Category i' j'} where
 
 open import level
@@ -16,7 +16,7 @@ open import category.functor.core
 open import category.functor.ops
 open import category.trans.core
 open import category.trans.ops
-open import hott.hlevel
+open import hott.level
 open import overloading
 
 open as-category C
@@ -41,14 +41,14 @@ functorial-structure-iso m = record
   ; iso₂ = λ _ → refl }
 
 is-func-prop : (m : GMorphism) → h 1 (Functorial m)
-is-func-prop m = iso-hlevel (functorial-structure-iso m)
-  ( ×-hlevel
-    ( Π-hlevel λ X → trunc _ _ _ _ )
-    ( Π-hlevel-impl λ X
-      → Π-hlevel-impl λ Y
-      → Π-hlevel-impl λ Z
-      → Π-hlevel λ f
-      → Π-hlevel λ g
+is-func-prop m = iso-level (functorial-structure-iso m)
+  ( ×-level
+    ( Π-level λ X → trunc _ _ _ _ )
+    ( Π-level-impl λ X
+      → Π-level-impl λ Y
+      → Π-level-impl λ Z
+      → Π-level λ f
+      → Π-level λ g
       → trunc _ _ _ _ ) )
 
 functor-structure-iso : Σ GMorphism Functorial ≅ Functor C D

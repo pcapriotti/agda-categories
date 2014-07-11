@@ -10,7 +10,7 @@ open import category.functor.adjoint
 open import category.instances.unit
 open import function.isomorphism
 open import sets.unit
-open import hott.hlevel
+open import hott.level
 
 -- X is a terminal object if the functor X : unit → C
 -- is a right adjoint of the unique functor C → unit
@@ -24,7 +24,7 @@ private
     open as-category C
 
     term-univ : (Y : obj C) → contr (hom Y X)
-    term-univ Y = iso-hlevel (adj Y tt) (h↑ ⊤-contr tt tt)
+    term-univ Y = iso-level (adj Y tt) (h↑ ⊤-contr tt tt)
 
     ! : (Y : obj C) → hom Y X
     ! Y = proj₁ (term-univ Y)

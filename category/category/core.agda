@@ -11,7 +11,7 @@ open import category.graph.core
 open import category.category.builder
 open import category.category.zero
 
-open import hott.hlevel.core
+open import hott.level.core
 
 record IsCategory i j (C : Category₀ i j) : Set (i ⊔ j) where
   open as-category₀ C

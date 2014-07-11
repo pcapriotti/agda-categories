@@ -6,7 +6,7 @@ open import level
 open import equality.core
 open import category.graph
 open import category.category
-open import hott.hlevel
+open import hott.level
 
 free-cat : ∀ {i j}(W : Graph i j)
          → h 3 (obj W)
@@ -17,7 +17,7 @@ free-cat W hX hW = mk-category record
   ; hom = Paths W
   ; id = λ _ → nil
   ; _∘_ = λ ws us → us ++ ws
-  ; trunc = paths-hlevel hX hW
+  ; trunc = paths-level hX hW
   ; left-id = nil-right-unit
   ; right-id = λ _ → refl
   ; assoc = λ ws us vs → ++-assoc vs us ws }

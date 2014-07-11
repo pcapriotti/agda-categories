@@ -12,7 +12,7 @@ open import function.overloading
 open import category.functor
 open import category.trans
 open import equality.core
-open import hott.hlevel
+open import hott.level
 
 open as-category D
 

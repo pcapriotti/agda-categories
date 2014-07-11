@@ -6,7 +6,7 @@ open import level using (_⊔_)
 open import equality.core hiding (singleton)
 open import equality.calculus
 open import equality.reasoning
-open import hott.hlevel
+open import hott.level
 
 open import category.graph
 

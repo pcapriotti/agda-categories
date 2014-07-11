@@ -11,7 +11,7 @@ open import category.limit.core
 open import sets.fin
 open import sets.unit
 open import sets.vec
-open import hott.hlevel
+open import hott.level
 
 product-graph : Category _ _
 product-graph = discrete-cat (Fin 2 , h! (fin-set 2))

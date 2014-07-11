@@ -15,7 +15,7 @@ open import category.category.opposite
 open import category.functor.core
 open import category.instances.set
 open import category.trans.core
-open import category.trans.hlevel
+open import category.trans.level
 open import category.trans.properties
 open import category.yoneda.core
 

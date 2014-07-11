@@ -8,7 +8,7 @@ open import category.groupoid
 open import category.instances.discrete
 open import sets.empty
 open import sets.unit
-open import hott.hlevel
+open import hott.level
 
 empty-groupoid : Groupoid _ _
 empty-groupoid = discrete (⊥ , h! ⊥-prop)

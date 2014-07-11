@@ -8,12 +8,12 @@ module category.kan-extension.properties {i₀ j₀ i₁ j₁ i₂ j₂ i₃ j�
   {D : Category i₂ j₂}{D' : Category i₃ j₃} where
 
 open import function.core
-open import category.functor.hlevel
+open import category.functor.level
 open import category.functor.properties
 open import category.functor.ops
 open import category.kan-extension.core
 open import category.trans
-open import hott.hlevel
+open import hott.level
 
 open as-category₀ (Func₀ C D')
 
