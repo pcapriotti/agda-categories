@@ -19,6 +19,6 @@ record IsCategory {𝑖 𝑗} (𝓒 : Graph 𝑖 𝑗) ⦃ 𝓒-cat : IsCategory
     runit : {x y : obj 𝓒} (f : hom 𝓒 x y) → f ∘ id x ≡ f
     assoc : {x y z w : obj 𝓒} (f : hom 𝓒 z w) (g : hom 𝓒 y z) (h : hom 𝓒 x y)
           → (f ∘ g) ∘ h ≡ f ∘ (g ∘ h)
-    trunc : {x y : obj 𝓒} → h 2 (hom 𝓒 x y)
+    trunc : (x y : obj 𝓒) → h 2 (hom 𝓒 x y)
 
 open IsCategory ⦃ ... ⦄ public
